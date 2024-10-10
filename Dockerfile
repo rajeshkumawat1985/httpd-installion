@@ -4,6 +4,7 @@ RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|
 RUN yum install httpd zip wget unzip -y
 RUN wget -O /var/www/html/sbs.zip https://www.free-css.com/assets/files/free-css-templates/download/page295/sbs.zip
 WORKDIR /var/www/html
+CMD mkdir fun
 RUN unzip sbs.zip
 RUN cp -rf sbs-html/* . &&\
     rm -rf sbs-html
